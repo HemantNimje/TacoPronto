@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">Taco Pronto</string>
+
+    <string name="taco_pronto">Taco Pronto</string>
+    <string name="address">123 Euclid Ave</string>
+    <string name="contact_number_hint">Please enter your contact number here</string>
+    <string name="button_text">Place your order</string>
+    <string name="taco_image">Taco image</string>
+
+
+    <!-- Headers -->
+    <string name="header_size">Size</string>
+    <string name="header_tortilla">Tortilla</string>
+    <string name="header_fillings">Fillings</string>
+    <string name="header_beverage">Beverage</string>
+
+    <!-- Radio Buttons -->
+    <string name="radio_button_large">Large</string>
+    <string name="radio_button_medium">Medium</string>
+    <string name="radio_button_corn">Corn</string>
+    <string name="radio_button_flour">Flour</string>
+
+    <!-- CheckBox Fillings -->
+    <string name="checkbox_filling_beef">Beef</string>
+    <string name="checkbox_filling_chicken">Chicken</string>
+    <string name="checkbox_filling_white_fish">White Fish</string>
+    <string name="checkbox_filling_sea_food">Sea Food</string>
+    <string name="checkbox_filling_cheese">Cheese</string>
+    <string name="checkbox_filling_rice">Rice</string>
+    <string name="checkbox_filling_beans">Beans</string>
+    <string name="checkbox_filling_pico_de_gallo">Pico de Gallo</string>
+    <string name="checkbox_filling_guacamole">Guacamole</string>
+    <string name="checkbox_filling_lbt">LBT</string>
+
+    <!-- Checkbox Beverages -->
+    <string name="checkbox_beverage_soda">Soda</string>
+    <string name="checkbox_beverage_cerveza">Cerveza</string>
+    <string name="checkbox_beverage_margarita">Margarita</string>
+    <string name="checkbox_beverage_tequila">Tequila</string>
+
 </resources>

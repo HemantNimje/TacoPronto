@@ -15,26 +15,26 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="Taco image"
+            android:contentDescription="@string/taco_image"
             android:src="@drawable/mexicantacos" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Taco Pronto"
+            android:text="@string/taco_pronto"
             android:textSize="24sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="123 Euclid Ave" />
+            android:text="@string/address" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Please enter your contact number here"
+            android:hint="@string/contact_number_hint"
             android:inputType="phone" />
 
         <TextView
@@ -42,7 +42,7 @@
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Size" />
+            android:text="@string/header_size" />
 
         <RadioGroup
             android:id="@+id/radio_group_size"
@@ -57,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Large" />
+                android:text="@string/radio_button_large" />
 
             <RadioButton
                 android:id="@+id/radio_button_medium"
@@ -65,7 +65,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Medium" />
+                android:text="@string/radio_button_medium" />
 
         </RadioGroup>
 
@@ -74,7 +74,7 @@
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tortilla" />
+            android:text="@string/header_tortilla" />
 
         <RadioGroup
             android:id="@+id/radio_group_tortilla"
@@ -89,7 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Corn" />
+                android:text="@string/radio_button_corn" />
 
             <RadioButton
                 android:id="@+id/radio_button_flour"
@@ -97,7 +97,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Flour" />
+                android:text="@string/radio_button_flour" />
 
         </RadioGroup>
 
@@ -106,117 +106,117 @@
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fillings" />
+            android:text="@string/header_fillings" />
 
         <CheckBox
             android:id="@+id/checkbox_beef"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Beef" />
+            android:text="@string/checkbox_filling_beef" />
 
         <CheckBox
             android:id="@+id/checkbox_chicken"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chicken" />
+            android:text="@string/checkbox_filling_chicken" />
 
         <CheckBox
             android:id="@+id/checkbox_white_fish"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="White Fish" />
+            android:text="@string/checkbox_filling_white_fish" />
 
         <CheckBox
             android:id="@+id/checkbox_sea_food"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sea Food" />
+            android:text="@string/checkbox_filling_sea_food" />
 
         <CheckBox
             android:id="@+id/checkbox_cheese"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cheese" />
+            android:text="@string/checkbox_filling_cheese" />
 
         <CheckBox
             android:id="@+id/checkbox_rice"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rice" />
+            android:text="@string/checkbox_filling_rice" />
 
         <CheckBox
             android:id="@+id/checkbox_beans"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Beans" />
+            android:text="@string/checkbox_filling_beans" />
 
         <CheckBox
             android:id="@+id/checkbox_pico_de_gallo"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pico de Gallo" />
+            android:text="@string/checkbox_filling_pico_de_gallo" />
 
         <CheckBox
             android:id="@+id/checkbox_guacamole"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guacamole" />
+            android:text="@string/checkbox_filling_guacamole" />
 
         <CheckBox
             android:id="@+id/checkbox_lbt"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LBT" />
+            android:text="@string/checkbox_filling_lbt" />
 
         <TextView
             android:id="@+id/header_Beverage"
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Beverage" />
+            android:text="@string/header_beverage" />
 
         <CheckBox
             android:id="@+id/checkbox_soda"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Soda" />
+            android:text="@string/checkbox_beverage_soda" />
 
         <CheckBox
             android:id="@+id/checkbox_cerveza"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cerveza" />
+            android:text="@string/checkbox_beverage_cerveza" />
 
         <CheckBox
             android:id="@+id/checkbox_margarita"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Margarita" />
+            android:text="@string/checkbox_beverage_margarita" />
 
         <CheckBox
             android:id="@+id/checkbox_tequila"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tequila" />
+            android:text="@string/checkbox_beverage_tequila" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Place your order" />
+            android:text="@string/button_text" />
 
     </LinearLayout>
 </ScrollView>
