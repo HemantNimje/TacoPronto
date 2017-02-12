@@ -8,4 +8,29 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Headers of the application -->
+    <style name="HeaderTextStyle">
+        <item name="android:background">#E0E0E0</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+
+    <!-- RadioGroup inside the application -->
+    <style name="RadioGroupStyle">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
+    <!-- RadioButton inside the application -->
+    <style name="RadioButtonStyle">
+        <item name="android:paddingLeft">16dp</item>
+    </style>
+
+    <!-- CheckBox inside the application -->
+    <style name="CheckBoxStyle">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+    </style>
+
 </resources>
