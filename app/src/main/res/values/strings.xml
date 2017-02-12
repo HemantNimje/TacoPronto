@@ -3,9 +3,9 @@
 
     <string name="taco_pronto">Taco Pronto</string>
     <string name="address">123 Euclid Ave</string>
-    <string name="contact_number_hint">Please enter your contact number here</string>
-    <string name="button_text">Place your order</string>
+    <string name="contact_number_hint">Contact?</string>
     <string name="taco_image">Taco image</string>
+    <string name="text_order_quantity">1</string>
 
 
     <!-- Headers -->
@@ -37,5 +37,11 @@
     <string name="checkbox_beverage_cerveza">Cerveza</string>
     <string name="checkbox_beverage_margarita">Margarita</string>
     <string name="checkbox_beverage_tequila">Tequila</string>
+
+    <!-- Buttons -->
+    <string name="button_decrement">-</string>
+    <string name="button_increment">+</string>
+    <string name="button_place_order">Place your order</string>
+
 
 </resources>

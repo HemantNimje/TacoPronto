@@ -14,8 +14,9 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="184dp"
             android:contentDescription="@string/taco_image"
+            android:paddingTop="8dp"
             android:src="@drawable/mexicantacos" />
 
         <TextView
@@ -31,11 +32,17 @@
             android:gravity="center"
             android:text="@string/address" />
 
+        <View
+            style="@style/DividerHorizontalSmall"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
         <EditText
+            android:id="@+id/edit_text_contact"
+            style="@style/ContactEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/contact_number_hint"
-            android:inputType="phone" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/header_size"
@@ -48,8 +55,9 @@
             android:id="@+id/radio_group_size"
             style="@style/RadioGroupStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:orientation="horizontal">
+
 
             <RadioButton
                 android:id="@+id/radio_button_large"
@@ -58,6 +66,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/radio_button_large" />
+
+            <View
+                style="@style/DividerVertical"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
 
             <RadioButton
                 android:id="@+id/radio_button_medium"
@@ -80,7 +93,7 @@
             android:id="@+id/radio_group_tortilla"
             style="@style/RadioGroupStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -90,6 +103,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/radio_button_corn" />
+
+            <View
+                style="@style/DividerVertical"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
 
             <RadioButton
                 android:id="@+id/radio_button_flour"
@@ -112,70 +130,115 @@
             android:id="@+id/checkbox_beef"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_beef" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_chicken"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_chicken" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_white_fish"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_white_fish" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_sea_food"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_sea_food" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_cheese"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_cheese" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_rice"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_rice" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_beans"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_beans" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_pico_de_gallo"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_pico_de_gallo" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_guacamole"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_guacamole" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_lbt"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_filling_lbt" />
 
         <TextView
@@ -189,34 +252,90 @@
             android:id="@+id/checkbox_soda"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_beverage_soda" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_cerveza"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_beverage_cerveza" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_margarita"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_beverage_margarita" />
+
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
         <CheckBox
             android:id="@+id/checkbox_tequila"
             style="@style/CheckBoxStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:text="@string/checkbox_beverage_tequila" />
 
-        <Button
+        <View
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_text" />
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/button_decrement"
+                style="@style/ButtonQuantityIncreaseOrDecrease"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_decrement" />
+
+            <TextView
+                android:id="@+id/text_view_order_quantity"
+                style="@style/TextViewOrderQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_order_quantity" />
+
+            <Button
+                android:id="@+id/button_increment"
+                style="@style/ButtonQuantityIncreaseOrDecrease"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_increment" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/DividerHorizontalSmall"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/button_place_order"
+            style="@style/ButtonPlaceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_place_order" />
 
     </LinearLayout>
 </ScrollView>

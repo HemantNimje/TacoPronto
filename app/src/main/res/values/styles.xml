@@ -10,27 +10,88 @@
 
     <!-- Headers of the application -->
     <style name="HeaderTextStyle">
+        <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:background">#E0E0E0</item>
-        <item name="android:padding">8dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textAllCaps">true</item>
 
     </style>
 
     <!-- RadioGroup inside the application -->
     <style name="RadioGroupStyle">
-        <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
     </style>
 
     <!-- RadioButton inside the application -->
     <style name="RadioButtonStyle">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginLeft">16dp</item>
         <item name="android:paddingLeft">16dp</item>
     </style>
 
     <!-- CheckBox inside the application -->
     <style name="CheckBoxStyle">
-        <item name="android:paddingLeft">16dp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingLeft">24dp</item>
         <item name="android:layout_marginLeft">16dp</item>
+    </style>
+
+    <!-- Horizontal Divider -->
+    <style name="DividerHorizontal">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <!-- Horizontal Divider -->
+    <style name="DividerHorizontalSmall">
+        <item name="android:layout_marginLeft">160dp</item>
+        <item name="android:layout_marginRight">160dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <!-- Vertical Divider -->
+    <style name="DividerVertical">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+    </style>
+
+    <!-- Contact EditText -->
+    <style name="ContactEditText">
+        <item name="android:layout_marginLeft">96dp</item>
+        <item name="android:layout_marginRight">96dp</item>
+        <item name="android:maxLength">10</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:hint">@string/contact_number_hint</item>
+    </style>
+
+    <!-- Button Increment, Decrement -->
+    <style name="ButtonQuantityIncreaseOrDecrease">
+        <item name="android:background">@drawable/shape</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <!-- Order Quantity -->
+    <style name="TextViewOrderQuantity">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
+    <!-- Button PlaceOrder -->
+    <style name="ButtonPlaceOrder">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_margin">16dp</item>
     </style>
 
 </resources>
