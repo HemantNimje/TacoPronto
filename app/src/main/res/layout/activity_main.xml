@@ -674,12 +674,28 @@
         android:layout_alignParentBottom="true"
         android:background="#FAFAFA">
 
-        <Button
-            android:id="@+id/button_place_order"
-            style="@style/ButtonPlaceOrder"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_place_order" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_view_total_cost"
+                style="@style/TotalCostTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/total_cost" />
+
+            <Button
+                android:id="@+id/button_place_order"
+                style="@style/ButtonPlaceOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="@string/button_place_order" />
+
+        </LinearLayout>
+
     </FrameLayout>
 
 </RelativeLayout>
