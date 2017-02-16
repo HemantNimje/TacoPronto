@@ -109,4 +109,12 @@
         <item name="android:layout_marginRight">24dp</item>
     </style>
 
+    <!-- Total cost text style -->
+    <style name="TotalCostTextStyle">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>

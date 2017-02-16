@@ -288,8 +288,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (toppingCount == 4) {
-            Toast.makeText(this, "You can select only two fillings", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "You can select only four toppings", Toast.LENGTH_SHORT).show();
         }
-
     }
 }
