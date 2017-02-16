@@ -99,7 +99,7 @@
     <!-- Button PlaceOrder -->
     <style name="ButtonPlaceOrder">
         <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_margin">8dp</item>
     </style>
 
 
