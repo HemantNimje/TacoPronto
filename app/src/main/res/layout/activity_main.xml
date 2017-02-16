@@ -302,6 +302,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="chooseToppings"
                     android:text="@string/checkbox_filling_cheese" />
 
                 <TextView
@@ -334,6 +335,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="chooseToppings"
                     android:text="@string/checkbox_filling_rice" />
 
                 <TextView
@@ -366,6 +368,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="chooseToppings"
                     android:text="@string/checkbox_filling_beans" />
 
                 <TextView
@@ -399,6 +402,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="chooseToppings"
                     android:text="@string/checkbox_filling_pico_de_gallo" />
 
                 <TextView
@@ -432,6 +436,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="chooseToppings"
                     android:text="@string/checkbox_filling_guacamole" />
 
                 <TextView
@@ -464,6 +469,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="chooseToppings"
                     android:text="@string/checkbox_filling_lbt" />
 
                 <TextView

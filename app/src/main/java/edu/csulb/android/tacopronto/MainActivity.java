@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int quantity = 1;
     private int fillingCount = 0;
+    private int toppingCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +69,6 @@ public class MainActivity extends AppCompatActivity {
         RadioButton radioButtonCorn = (RadioButton) findViewById(R.id.radio_button_corn);
         RadioButton radioButtonFlour = (RadioButton) findViewById(R.id.radio_button_flour);
 
-
-        CheckBox checkBoxCheese = (CheckBox) findViewById(R.id.checkbox_cheese);
-        CheckBox checkBoxRice = (CheckBox) findViewById(R.id.checkbox_rice);
-        CheckBox checkBoxBeans = (CheckBox) findViewById(R.id.checkbox_beans);
-        CheckBox checkBoxPicoDeGallo = (CheckBox) findViewById(R.id.checkbox_pico_de_gallo);
-        CheckBox checkBoxGuacamole = (CheckBox) findViewById(R.id.checkbox_guacamole);
-        CheckBox checkBoxLBT = (CheckBox) findViewById(R.id.checkbox_lbt);
         CheckBox checkBoxSoda = (CheckBox) findViewById(R.id.checkbox_soda);
         CheckBox checkBoxCerveza = (CheckBox) findViewById(R.id.checkbox_cerveza);
         CheckBox checkBoxMargarita = (CheckBox) findViewById(R.id.checkbox_margarita);
@@ -189,4 +183,113 @@ public class MainActivity extends AppCompatActivity {
         orderQuantity.setText("" + quantity);
     }
 
+    public void chooseToppings(View view) {
+        CheckBox checkBoxCheese = (CheckBox) findViewById(R.id.checkbox_cheese);
+        boolean hasCheese = checkBoxCheese.isChecked();
+
+        CheckBox checkBoxRice = (CheckBox) findViewById(R.id.checkbox_rice);
+        boolean hasRice = checkBoxRice.isChecked();
+
+        CheckBox checkBoxBeans = (CheckBox) findViewById(R.id.checkbox_beans);
+        boolean hasBeans = checkBoxBeans.isChecked();
+
+        CheckBox checkBoxPicoDeGallo = (CheckBox) findViewById(R.id.checkbox_pico_de_gallo);
+        boolean hasPicoDeGallo = checkBoxPicoDeGallo.isChecked();
+
+        CheckBox checkBoxGuacamole = (CheckBox) findViewById(R.id.checkbox_guacamole);
+        boolean hasGaucamole = checkBoxGuacamole.isChecked();
+
+        CheckBox checkBoxLBT = (CheckBox) findViewById(R.id.checkbox_lbt);
+        boolean hasLBT = checkBoxLBT.isChecked();
+
+        switch (view.getId()) {
+            case R.id.checkbox_cheese:
+                if (hasCheese) {
+                    toppingCount += 1;
+                } else {
+                    toppingCount -= 1;
+                }
+                break;
+            case R.id.checkbox_rice:
+                if (hasRice) {
+                    toppingCount += 1;
+                } else {
+                    toppingCount -= 1;
+                }
+                break;
+            case R.id.checkbox_beans:
+                if (hasBeans) {
+                    toppingCount += 1;
+                } else {
+                    toppingCount -= 1;
+                }
+                break;
+            case R.id.checkbox_pico_de_gallo:
+                if (hasPicoDeGallo) {
+                    toppingCount += 1;
+                } else {
+                    toppingCount -= 1;
+                }
+                break;
+            case R.id.checkbox_guacamole:
+                if (hasGaucamole) {
+                    toppingCount += 1;
+                } else {
+                    toppingCount -= 1;
+                }
+                break;
+            case R.id.checkbox_lbt:
+                if (hasLBT) {
+                    toppingCount += 1;
+                } else {
+                    toppingCount -= 1;
+                }
+                break;
+        }
+
+        if (toppingCount < 4) {
+            checkBoxCheese.setEnabled(true);
+            checkBoxRice.setEnabled(true);
+            checkBoxBeans.setEnabled(true);
+            checkBoxPicoDeGallo.setEnabled(true);
+            checkBoxGuacamole.setEnabled(true);
+            checkBoxLBT.setEnabled(true);
+        } else {
+            if (!hasCheese) {
+                checkBoxCheese.setEnabled(false);
+            } else {
+                checkBoxCheese.setEnabled(true);
+            }
+            if (!hasRice) {
+                checkBoxRice.setEnabled(false);
+            } else {
+                checkBoxRice.setEnabled(true);
+            }
+            if (!hasBeans) {
+                checkBoxBeans.setEnabled(false);
+            } else {
+                checkBoxBeans.setEnabled(true);
+            }
+            if (!hasPicoDeGallo) {
+                checkBoxPicoDeGallo.setEnabled(false);
+            } else {
+                checkBoxPicoDeGallo.setEnabled(true);
+            }
+            if (!hasGaucamole) {
+                checkBoxGuacamole.setEnabled(false);
+            } else {
+                checkBoxGuacamole.setEnabled(true);
+            }
+            if (!hasLBT) {
+                checkBoxLBT.setEnabled(false);
+            } else {
+                checkBoxLBT.setEnabled(true);
+            }
+        }
+
+        if (toppingCount == 4) {
+            Toast.makeText(this, "You can select only two fillings", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }
