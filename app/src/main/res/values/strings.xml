@@ -2,16 +2,17 @@
     <string name="app_name">Taco Pronto</string>
 
     <string name="taco_pronto">Taco Pronto</string>
-    <string name="address">123 Euclid Ave</string>
-    <string name="contact_number_hint">Contact?</string>
+    <string name="taco_address">123 Euclid Ave</string>
+    <string name="taco_contact">Phone: 5623149923</string>
+    <string name="contact_number_hint">Phone: 5623149923</string>
     <string name="taco_image">Taco image</string>
     <string name="text_order_quantity">1</string>
-
 
     <!-- Headers -->
     <string name="header_size">Size</string>
     <string name="header_tortilla">Tortilla</string>
     <string name="header_fillings">Fillings</string>
+    <string name="header_toppings">Toppings</string>
     <string name="header_beverage">Beverage</string>
 
     <!-- Radio Buttons -->
@@ -42,6 +43,27 @@
     <string name="button_decrement">-</string>
     <string name="button_increment">+</string>
     <string name="button_place_order">Place your order</string>
+
+    <!-- Custom row -->
+    <string name="row_checkbox_name">Items to add</string>
+    <string name="row_cost">2.00</string>
+
+    <!-- Prices -->
+    <string name="price">2.70</string>
+    <string name="beef_price">2.70</string>
+    <string name="chicken_price">2.40</string>
+    <string name="white_fish_price">2.45</string>
+    <string name="sea_food_price">2.60</string>
+    <string name="cheese_price">0.50</string>
+    <string name="rice_price">1.00</string>
+    <string name="beans_price">0.65</string>
+    <string name="pico_de_gallo_price">0.50</string>
+    <string name="guacamole_price">1.25</string>
+    <string name="lbt_price">1.50</string>
+    <string name="soda_price">1.45</string>
+    <string name="cerveza_price">1.75</string>
+    <string name="margarita_price">2.00</string>
+    <string name="tequila_price">3.45</string>
 
 
 </resources>

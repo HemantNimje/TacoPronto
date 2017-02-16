@@ -7,12 +7,13 @@
     android:orientation="vertical"
     tools:context="edu.csulb.android.tacopronto.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/taco_image"
             android:layout_width="match_parent"
             android:layout_height="184dp"
             android:contentDescription="@string/taco_image"
@@ -20,35 +21,37 @@
             android:src="@drawable/mexicantacos" />
 
         <TextView
+            android:id="@+id/taco_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/taco_image"
             android:gravity="center"
             android:text="@string/taco_pronto"
             android:textSize="24sp" />
 
         <TextView
+            android:id="@+id/taco_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/taco_title"
             android:gravity="center"
-            android:text="@string/address" />
+            android:text="@string/taco_address" />
 
-        <View
-            style="@style/DividerHorizontalSmall"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-
-        <EditText
-            android:id="@+id/edit_text_contact"
-            style="@style/ContactEditText"
+        <TextView
+            android:id="@+id/taco_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center" />
+            android:layout_below="@id/taco_address"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/taco_contact" />
 
         <TextView
             android:id="@+id/header_size"
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/taco_contact"
             android:text="@string/header_size" />
 
         <RadioGroup
@@ -56,6 +59,7 @@
             style="@style/RadioGroupStyle"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_below="@id/header_size"
             android:orientation="horizontal">
 
 
@@ -68,6 +72,7 @@
                 android:text="@string/radio_button_large" />
 
             <View
+                android:id="@+id/vertical_divider_size"
                 style="@style/DividerVertical"
                 android:layout_width="1dp"
                 android:layout_height="match_parent" />
@@ -87,6 +92,7 @@
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/radio_group_size"
             android:text="@string/header_tortilla" />
 
         <RadioGroup
@@ -94,6 +100,7 @@
             style="@style/RadioGroupStyle"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_below="@id/header_tortilla"
             android:orientation="horizontal">
 
             <RadioButton
@@ -105,6 +112,7 @@
                 android:text="@string/radio_button_corn" />
 
             <View
+                android:id="@+id/vertical_divider_tortilla"
                 style="@style/DividerVertical"
                 android:layout_width="1dp"
                 android:layout_height="match_parent" />
@@ -124,181 +132,486 @@
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/radio_group_tortilla"
             android:text="@string/header_fillings" />
 
-        <CheckBox
-            android:id="@+id/checkbox_beef"
-            style="@style/CheckBoxStyle"
+        <!--  <ListView
+              android:id="@+id/custom_list_view_fillings"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/header_fillings" />-->
+
+        <LinearLayout
+            android:id="@+id/row_beef"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_beef" />
+            android:layout_below="@id/header_fillings"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_beef"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_beef" />
+
+            <TextView
+                android:id="@+id/price_beef"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/beef_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_beef"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_beef" />
 
-        <CheckBox
-            android:id="@+id/checkbox_chicken"
-            style="@style/CheckBoxStyle"
+        <LinearLayout
+            android:id="@+id/row_chicken"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_chicken" />
+            android:layout_below="@id/horizontal_divider_beef"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_chicken"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_chicken" />
+
+            <TextView
+                android:id="@+id/price_chicken"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/chicken_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_chicken"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_chicken" />
 
-        <CheckBox
-            android:id="@+id/checkbox_white_fish"
-            style="@style/CheckBoxStyle"
+        <LinearLayout
+            android:id="@+id/row_white_fish"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_white_fish" />
+            android:layout_below="@id/horizontal_divider_chicken"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_white_fish"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_white_fish" />
+
+            <TextView
+                android:id="@+id/price_white_fish"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/white_fish_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_white_fish"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_white_fish" />
 
-        <CheckBox
-            android:id="@+id/checkbox_sea_food"
-            style="@style/CheckBoxStyle"
+        <LinearLayout
+            android:id="@+id/row_sea_food"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_sea_food" />
+            android:layout_below="@id/horizontal_divider_white_fish"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_sea_food"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_sea_food" />
+
+            <TextView
+                android:id="@+id/price_sea_food"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/sea_food_price" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/header_toppings"
+            style="@style/HeaderTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row_sea_food"
+            android:text="@string/header_toppings" />
+
+
+        <!--<ListView
+            android:id="@+id/custom_list_view_toppings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header_toppings" />-->
+
+        <LinearLayout
+            android:id="@+id/row_cheese"
+            style="@style/CustomRow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/header_toppings"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_cheese"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_cheese" />
+
+            <TextView
+                android:id="@+id/price_cheese"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/cheese_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_cheese"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_cheese" />
 
-        <CheckBox
-            android:id="@+id/checkbox_cheese"
-            style="@style/CheckBoxStyle"
+        <LinearLayout
+            android:id="@+id/row_rice"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_cheese" />
+            android:layout_below="@id/horizontal_divider_cheese"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_rice"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_rice" />
+
+            <TextView
+                android:id="@+id/price_rice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/rice_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_rice"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_rice" />
 
-        <CheckBox
-            android:id="@+id/checkbox_rice"
-            style="@style/CheckBoxStyle"
+        <LinearLayout
+            android:id="@+id/row_beans"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_rice" />
+            android:layout_below="@id/horizontal_divider_rice"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_beans"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_beans" />
+
+            <TextView
+                android:id="@+id/price_beans"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/beans_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_beans"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_beans" />
 
-        <CheckBox
-            android:id="@+id/checkbox_beans"
-            style="@style/CheckBoxStyle"
+        <LinearLayout
+            android:id="@+id/row_pico_de_gallo"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_beans" />
+            android:layout_below="@id/horizontal_divider_beans"
+            android:orientation="horizontal">
+
+
+            <CheckBox
+                android:id="@+id/checkbox_pico_de_gallo"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_pico_de_gallo" />
+
+            <TextView
+                android:id="@+id/price_pico_de_gallo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/pico_de_gallo_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_pico_de_gallo"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_pico_de_gallo" />
 
-        <CheckBox
-            android:id="@+id/checkbox_pico_de_gallo"
-            style="@style/CheckBoxStyle"
+
+        <LinearLayout
+            android:id="@+id/row_guacamole"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_pico_de_gallo" />
+            android:layout_below="@id/horizontal_divider_pico_de_gallo"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_guacamole"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_guacamole" />
+
+            <TextView
+                android:id="@+id/price_guacamole"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/guacamole_price" />
+
+        </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_guacamole"
             style="@style/DividerHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/row_guacamole" />
 
-        <CheckBox
-            android:id="@+id/checkbox_guacamole"
-            style="@style/CheckBoxStyle"
+        <LinearLayout
+            android:id="@+id/row_lbt"
+            style="@style/CustomRow"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="@string/checkbox_filling_guacamole" />
+            android:layout_below="@id/horizontal_divider_guacamole"
+            android:orientation="horizontal">
 
-        <View
-            style="@style/DividerHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            <CheckBox
+                android:id="@+id/checkbox_lbt"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_filling_lbt" />
 
-        <CheckBox
-            android:id="@+id/checkbox_lbt"
-            style="@style/CheckBoxStyle"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/checkbox_filling_lbt" />
+            <TextView
+                android:id="@+id/price_lbt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/lbt_price" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/header_Beverage"
             style="@style/HeaderTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/row_lbt"
             android:text="@string/header_beverage" />
 
-        <CheckBox
-            android:id="@+id/checkbox_soda"
-            style="@style/CheckBoxStyle"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/checkbox_beverage_soda" />
-
-        <View
-            style="@style/DividerHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-
-        <CheckBox
-            android:id="@+id/checkbox_cerveza"
-            style="@style/CheckBoxStyle"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/checkbox_beverage_cerveza" />
-
-        <View
-            style="@style/DividerHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-
-        <CheckBox
-            android:id="@+id/checkbox_margarita"
-            style="@style/CheckBoxStyle"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/checkbox_beverage_margarita" />
-
-        <View
-            style="@style/DividerHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-
-        <CheckBox
-            android:id="@+id/checkbox_tequila"
-            style="@style/CheckBoxStyle"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/checkbox_beverage_tequila" />
-
-        <View
-            style="@style/DividerHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
+        <!-- <ListView
+             android:id="@+id/custom_list_view_beverages"
+             android:layout_below="@id/header_Beverage"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" /> -->
 
         <LinearLayout
+            android:id="@+id/row_soda"
+            style="@style/CustomRow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/header_Beverage"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_soda"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_beverage_soda" />
+
+            <TextView
+                android:id="@+id/price_soda"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/soda_price" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/horizontal_divider_soda"
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/row_soda" />
+
+        <LinearLayout
+            android:id="@+id/row_cerveza"
+            style="@style/CustomRow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/horizontal_divider_soda"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_cerveza"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_beverage_cerveza" />
+
+            <TextView
+                android:id="@+id/price_cerveza"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/cerveza_price" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/horizontal_divider_cerveza"
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/row_cerveza" />
+
+
+        <LinearLayout
+            android:id="@+id/row_margarita"
+            style="@style/CustomRow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/horizontal_divider_cerveza"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_margarita"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_beverage_margarita" />
+
+            <TextView
+                android:id="@+id/price_margarita"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/margarita_price" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/horizontal_divider_margarita"
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/row_margarita" />
+
+        <LinearLayout
+            android:id="@+id/row_tequila"
+            style="@style/CustomRow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/horizontal_divider_margarita"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_tequila"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/checkbox_beverage_tequila" />
+
+            <TextView
+                android:id="@+id/price_tequila"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/tequila_price" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/horizontal_divider_tequila"
+            style="@style/DividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/row_tequila" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/horizontal_divider_tequila"
             android:gravity="center">
 
 
@@ -326,16 +639,21 @@
         </LinearLayout>
 
         <View
+            android:id="@+id/horizontal_divider_quantity"
             style="@style/DividerHorizontalSmall"
             android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:layout_height="1dp"
+            android:layout_below="@id/linear_layout_quantity" />
+
 
         <Button
             android:id="@+id/button_place_order"
             style="@style/ButtonPlaceOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/horizontal_divider_quantity"
             android:text="@string/button_place_order" />
 
-    </LinearLayout>
+    </RelativeLayout>
+
 </ScrollView>

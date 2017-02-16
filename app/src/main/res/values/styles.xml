@@ -35,11 +35,19 @@
     </style>
 
     <!-- CheckBox inside the application -->
+    <style name="TextStyle">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- CheckBox inside the application -->
     <style name="CheckBoxStyle">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingLeft">16dp</item>
         <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
     </style>
 
     <!-- Horizontal Divider -->
@@ -92,6 +100,13 @@
     <style name="ButtonPlaceOrder">
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:layout_margin">16dp</item>
+    </style>
+
+
+    <!-- Row containing checkbox for the item and its price -->
+    <style name="CustomRow">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">24dp</item>
     </style>
 
 </resources>
