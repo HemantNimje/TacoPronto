@@ -74,6 +74,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="chooseSize"
                     android:text="@string/radio_button_large" />
 
                 <View
@@ -89,6 +90,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:checked="true"
+                    android:onClick="chooseSize"
                     android:text="@string/radio_button_medium" />
 
             </RadioGroup>

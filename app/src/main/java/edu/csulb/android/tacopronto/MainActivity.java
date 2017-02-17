@@ -10,7 +10,10 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 
+import static android.R.attr.id;
 import static edu.csulb.android.tacopronto.R.string.price;
+import static edu.csulb.android.tacopronto.R.string.radio_button_corn;
+import static edu.csulb.android.tacopronto.R.string.radio_button_flour;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
     public void init() {
         radioButtonLarge = (RadioButton) findViewById(R.id.radio_button_large);
         radioButtonMedium = (RadioButton) findViewById(R.id.radio_button_medium);
+
+        radioButtonCorn = (RadioButton) findViewById(R.id.radio_button_corn);
+        radioButtonFlour = (RadioButton) findViewById(R.id.radio_button_flour);
 
     }
 
@@ -367,8 +373,14 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this,"Total Cost:"+bPrice,Toast.LENGTH_SHORT).show();
     }
 
+    /* Choose taco size */
+    public void chooseSize(View view) {
+        calculatePrice();
+    }
+
     private void calculatePrice() {
         if (radioButtonLarge.isChecked()) {
+            Toast.makeText(this, "For large taco every cost is increased by 2%", Toast.LENGTH_SHORT).show();
             changedPrice = new BigDecimal(quantity);
             changedPrice = changedPrice.multiply(BigDecimal.valueOf(1.2));
             finalPrice = bPrice.multiply(changedPrice);
