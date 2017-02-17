@@ -1,7 +1,15 @@
 package edu.csulb.android.tacopronto;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -23,9 +31,13 @@ public class MainActivity extends AppCompatActivity {
     private BigDecimal bPrice = new BigDecimal(0);
     private BigDecimal finalPrice = new BigDecimal(0);
     private BigDecimal changedPrice;
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
 
 
     RadioButton radioButtonLarge, radioButtonMedium, radioButtonCorn, radioButtonFlour;
+    boolean hasLarge, hasMedium, hasCorn, hasFlour, hasBeef, hasChicken, hasWhiteFish, hasSeaFood,
+            hasCheese, hasRice, hasBeans, hasPicoDeGallo, hasGaucamole, hasLBT, hasSoda, hasCerveza,
+            hasMargarita, hasTequila;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,16 +92,16 @@ public class MainActivity extends AppCompatActivity {
     /* Choose maximum two fillings */
     public void chooseFillings(View view) {
         CheckBox checkBoxBeef = (CheckBox) findViewById(R.id.checkbox_beef);
-        boolean hasBeef = checkBoxBeef.isChecked();
+        hasBeef = checkBoxBeef.isChecked();
 
         CheckBox checkBoxChicken = (CheckBox) findViewById(R.id.checkbox_chicken);
-        boolean hasChicken = checkBoxChicken.isChecked();
+        hasChicken = checkBoxChicken.isChecked();
 
         CheckBox checkBoxWhiteFish = (CheckBox) findViewById(R.id.checkbox_white_fish);
-        boolean hasWhiteFish = checkBoxWhiteFish.isChecked();
+        hasWhiteFish = checkBoxWhiteFish.isChecked();
 
         CheckBox checkBoxSeaFood = (CheckBox) findViewById(R.id.checkbox_sea_food);
-        boolean hasSeaFood = checkBoxSeaFood.isChecked();
+        hasSeaFood = checkBoxSeaFood.isChecked();
 
         switch (view.getId()) {
             case R.id.checkbox_beef:
@@ -167,22 +179,22 @@ public class MainActivity extends AppCompatActivity {
     /* Choose maximum four toppings */
     public void chooseToppings(View view) {
         CheckBox checkBoxCheese = (CheckBox) findViewById(R.id.checkbox_cheese);
-        boolean hasCheese = checkBoxCheese.isChecked();
+        hasCheese = checkBoxCheese.isChecked();
 
         CheckBox checkBoxRice = (CheckBox) findViewById(R.id.checkbox_rice);
-        boolean hasRice = checkBoxRice.isChecked();
+        hasRice = checkBoxRice.isChecked();
 
         CheckBox checkBoxBeans = (CheckBox) findViewById(R.id.checkbox_beans);
-        boolean hasBeans = checkBoxBeans.isChecked();
+        hasBeans = checkBoxBeans.isChecked();
 
         CheckBox checkBoxPicoDeGallo = (CheckBox) findViewById(R.id.checkbox_pico_de_gallo);
-        boolean hasPicoDeGallo = checkBoxPicoDeGallo.isChecked();
+        hasPicoDeGallo = checkBoxPicoDeGallo.isChecked();
 
         CheckBox checkBoxGuacamole = (CheckBox) findViewById(R.id.checkbox_guacamole);
-        boolean hasGaucamole = checkBoxGuacamole.isChecked();
+        hasGaucamole = checkBoxGuacamole.isChecked();
 
         CheckBox checkBoxLBT = (CheckBox) findViewById(R.id.checkbox_lbt);
-        boolean hasLBT = checkBoxLBT.isChecked();
+        hasLBT = checkBoxLBT.isChecked();
 
         switch (view.getId()) {
             case R.id.checkbox_cheese:
@@ -292,16 +304,16 @@ public class MainActivity extends AppCompatActivity {
     public void chooseBeverages(View view) {
 
         CheckBox checkBoxSoda = (CheckBox) findViewById(R.id.checkbox_soda);
-        boolean hasSoda = checkBoxSoda.isChecked();
+        hasSoda = checkBoxSoda.isChecked();
 
         CheckBox checkBoxCerveza = (CheckBox) findViewById(R.id.checkbox_cerveza);
-        boolean hasCerveza = checkBoxCerveza.isChecked();
+        hasCerveza = checkBoxCerveza.isChecked();
 
         CheckBox checkBoxMargarita = (CheckBox) findViewById(R.id.checkbox_margarita);
-        boolean hasMargarita = checkBoxMargarita.isChecked();
+        hasMargarita = checkBoxMargarita.isChecked();
 
         CheckBox checkBoxTequila = (CheckBox) findViewById(R.id.checkbox_tequila);
-        boolean hasTequila = checkBoxTequila.isChecked();
+        hasTequila = checkBoxTequila.isChecked();
 
         switch (view.getId()) {
             case R.id.checkbox_soda:
@@ -338,14 +350,15 @@ public class MainActivity extends AppCompatActivity {
 
     /* Increase the number of orders to be placed */
     public void increment(View view) {
-        if (quantity == 9) {
-            Toast.makeText(this, "Can't order more than 9 orders at a time.", Toast.LENGTH_SHORT).show();
+        if (quantity == 5) {
+            Toast.makeText(this, "Can't order more than 5 orders at a time.", Toast.LENGTH_SHORT).show();
             return;
         } else {
             quantity = quantity + 1;
 
         }
         displayQuantity(quantity);
+        calculatePrice();
     }
 
     /* Decrease the number of orders to be placed */
@@ -357,6 +370,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         displayQuantity(quantity);
+        calculatePrice();
     }
 
     /* Display the number of tacos */
@@ -369,12 +383,14 @@ public class MainActivity extends AppCompatActivity {
     private void displayCost() {
         TextView textViewTotalCost = (TextView) findViewById(R.id.text_view_total_cost);
 
-        textViewTotalCost.setText("$" + finalPrice);
+        textViewTotalCost.setText("$" + finalPrice.setScale(2, BigDecimal.ROUND_UP));
         //Toast.makeText(this,"Total Cost:"+bPrice,Toast.LENGTH_SHORT).show();
     }
 
     /* Choose taco size */
     public void chooseSize(View view) {
+        hasLarge = radioButtonLarge.isChecked();
+        hasMedium = radioButtonMedium.isChecked();
         calculatePrice();
     }
 
@@ -391,4 +407,93 @@ public class MainActivity extends AppCompatActivity {
         displayCost();
     }
 
+    public void submitOrder(View view) {
+        if (fillingCount != 0 && toppingCount != 0) {
+            String summary = createOrderSummary();
+
+
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage("+15623149923", null, summary, null, null);
+
+            Toast.makeText(this, "Your order is placed", Toast.LENGTH_SHORT).show();
+
+
+        } else {
+            Toast.makeText(this, "Please choose at least 1 filling and 1 topping", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    public String createOrderSummary() {
+        String summary = "";
+        if (radioButtonLarge.isChecked()) {
+            summary += "Large Taco";
+            //summary = getString(R.string.order_summary_large, hasLarge);
+        } else if (radioButtonMedium.isChecked()) {
+            summary += "Medium Taco";
+            //summary = getString(R.string.order_summary_medium, hasMedium);
+        }
+        if (radioButtonCorn.isChecked()) {
+            summary += "\nTortilla : Corn";
+        } else if (radioButtonFlour.isChecked()) {
+            summary += "\nTortilla : Flour";
+        }
+
+        summary += "\n";
+        //summary += "\nFillings: ";
+        if (hasBeef) {
+            summary += "Beef, ";
+        }
+        if (hasChicken) {
+            summary += "Chicken, ";
+        }
+        if (hasWhiteFish) {
+            summary += "White Fish, ";
+        }
+        if (hasSeaFood) {
+            summary += "Sea Food, ";
+        }
+
+        summary += "\n";
+        //summary += "\nToppings: ";
+        if (hasCheese) {
+            summary += "Cheese, ";
+        }
+        if (hasRice) {
+            summary += "Rice, ";
+        }
+        if (hasBeans) {
+            summary += "Beans, ";
+        }
+        if (hasPicoDeGallo) {
+            summary += "Pico De Gallo, ";
+        }
+        if (hasGaucamole) {
+            summary += "Guacamole, ";
+        }
+        if (hasLBT) {
+            summary += "LBT, ";
+        }
+
+        summary += "\nBeverages: ";
+        if (hasSoda) {
+            summary += "Soda, ";
+        }
+        if (hasCerveza) {
+            summary += "Cerveza, ";
+        }
+        if (hasMargarita) {
+            summary += "Margarita, ";
+        }
+        if (hasTequila) {
+            summary += "Tequila";
+        }
+
+        summary += "\nQuantity: " + quantity;
+        summary += "\nPrice:" + finalPrice;
+
+        return summary;
+    }
 }
+
+
