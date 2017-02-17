@@ -689,7 +689,7 @@
                 style="@style/TotalCostTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:text="@string/total_cost" />
 
             <Button
@@ -698,6 +698,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
+                android:onClick="submitOrder"
                 android:text="@string/button_place_order" />
 
         </LinearLayout>
